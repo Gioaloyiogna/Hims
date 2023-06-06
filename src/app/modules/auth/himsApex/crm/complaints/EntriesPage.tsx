@@ -7,9 +7,47 @@ import {KTSVG} from '../../../../../../_metronic/helpers/components/KTSVG'
 import {Link} from 'react-router-dom'
 
 const EntriesPage = () => {
+  const columns: any = [
+    {
+      title: 'Category',
+      sorter: (a: any, b: any) => a.id - b.id,
+    },
+    {
+      title: 'Client',
+      sorter: (a: any, b: any) => a.id - b.id,
+    },
+
+    {
+      title: 'Member',
+      sorter: (a: any, b: any) => a.id - b.id,
+    },
+    {
+      title: 'Complaint Date',
+      sorter: (a: any, b: any) => a.id - b.id,
+    },
+    {
+      title: 'Complaint Description',
+      sorter: (a: any, b: any) => a.id - b.id,
+    },
+    {
+      title: 'Action',
+      render: (record: any) => {
+        return (
+          <>
+            <Space size='middle'>
+              <a href='#' className='btn btn-light-warning btn-sm'>
+                Resolve
+              </a>
+            </Space>
+          </>
+        )
+      },
+    },
+  ]
+
   return (
     <>
-      <PageTitle>Members</PageTitle>
+      <PageTitle>Entries</PageTitle>
       <KTCard>
         <KTCardBody>
           <div className='d-flex justify-content-between'>
@@ -17,21 +55,8 @@ const EntriesPage = () => {
               <Input placeholder='Enter Search Text' type='text' allowClear />
               <Button type='primary'>Search</Button>
             </Space>
-            <Space style={{marginBottom: 16}}>
-              <Link to='add'>
-                <button type='button' className='btn btn-primary me-3'>
-                  <KTSVG path='/media/icons/duotune/arrows/arr075.svg' className='svg-icon-2' />
-                  Add
-                </button>
-              </Link>
-            </Space>
           </div>
-          <Table
-            className='table-responsive'
-            rowKey={'id'}
-            // columns={columns}
-            bordered
-          />
+          <Table className='table-responsive' rowKey={'id'} columns={columns} bordered />
         </KTCardBody>
       </KTCard>
     </>

@@ -7,6 +7,10 @@ import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 import {WithChildren} from '../../_metronic/helpers'
 import HimsApexPage from '../modules/auth/himsApex/HimsApexPage'
 
+import {PageTitle} from '../../_metronic/layout/core'
+import { AddReceivedClaims } from '../modules/auth/himsApex/claimReception/AddReceivedClaims'
+
+
 const PrivateRoutes = () => {
   // const ProfilePage = lazy(() => import('../modules/profile/ProfilePage'))
 
@@ -21,6 +25,7 @@ const PrivateRoutes = () => {
         {/* Pages */}
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='himsApex/*' element={<HimsApexPage />} />
+
         {/*<Route path='builder' element={<BuilderPageWrapper />} />*/}
         {/*<Route path='menu-test' element={<MenuTestPage />} />*/}
         {/* Lazy Modules */}
@@ -73,6 +78,19 @@ const PrivateRoutes = () => {
         {/*  }*/}
         {/*/>*/}
         {/* Page Not Found */}
+
+        {/* <Route path='himsApex/claimReception/add-received-calims' element={<AddReceivedClaims/>}/> */}
+        {/* <Route
+        path='/register/*'
+        element={
+          <>
+            
+            <addReceivedCalims />
+          </>
+        }
+      /> */}
+         <Route path='/himsApex/claimReception/add-claims-received' element={<AddReceivedClaims/>}/>
+       
         <Route path='*' element={<Navigate to='/error/404' />} />
       </Route>
     </Routes>

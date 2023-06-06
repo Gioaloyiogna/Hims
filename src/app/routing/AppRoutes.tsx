@@ -12,6 +12,7 @@ import {ErrorsPage} from '../modules/errors/ErrorsPage'
 import {Logout, AuthPage, useAuth} from '../modules/auth'
 import {App} from '../App'
 
+
 /**
  * Base URL of the website.
  *
@@ -38,7 +39,9 @@ const AppRoutes: FC = () => {
               <Route path='*' element={<Navigate to='/auth' />} />
             </>
           )}
+       
         </Route>
+        
       </Routes>
     </BrowserRouter>
   )
